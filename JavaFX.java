@@ -41,6 +41,7 @@ public class JavaFX extends Application {
         boton.setLayoutX(45);
         boton.setLayoutY(45);
     
+        //para poner una imagen en el fondo de la pantalla.    **************************DEL EJERCICIO***********************************************
          Image image = new Image ("0.jpg");
         ImageView ima2 = new ImageView();
         ima2.setImage(image);
@@ -49,12 +50,15 @@ public class JavaFX extends Application {
         //Se agrega el boton
         root.getChildren().add(boton);
         
-        //para mostrar en pantalla un texto al pulsar el botón.
+        //para mostrar en pantalla un texto al pulsar el botón.  *************************DEL EJERCICIO********************************************
         boton.setOnAction(event -> {System.out.println("Hola.");});
         
-       
-    
         
+        boton.setOnAction(event -> {  Image image2 = new Image ("1.jpg");
+        ImageView ima22 = new ImageView();
+        ima2.setImage(image2);
+        root.getChildren().add(ima22);   });
+               
         //Para mostrar la visible, semejante al setVisible(true)
         primaryStage.show();        
     }
