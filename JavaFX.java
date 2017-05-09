@@ -25,21 +25,20 @@ public class JavaFX extends Application {
 		primaryStage.setScene( scene );
 		
 		//Creacion del boton
-		Button boton = new Button("Saludos");
+		Button boton = new Button("Saludar");
 		boton.setDefaultButton(true);
 		//Tamaño del boton
 		boton.setPrefSize(100, 50);
 		//Tamaño del boton
 		//Posicion dle boton
-		boton.setLayoutX(65);
-		boton.setLayoutY(60);
-		
-		
-		
-		
-		
+		boton.setLayoutX(45);
+		boton.setLayoutY(45);
+	
 		//Se agrega el boton
 		root.getChildren().add(boton);
+		
+		//para mostrar en pantalla un texto al pulsar el botón.
+		boton.setOnAction(event -> {System.out.println("Hola.");});
 		
 		//Para mostrar la visible, semejante al setVisible(true)
 		primaryStage.show();		
