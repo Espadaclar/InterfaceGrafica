@@ -1,5 +1,4 @@
 
-
 import javafx.stage.Stage;             // |
 import javafx.scene.Group;             // |\ Librerías necesarias
 import javafx.scene.Scene;             // |/ Para el ejemplo
@@ -20,10 +19,7 @@ public class JavaFX extends Application {
     //Este metodo es obligatorio
     public void start( Stage primaryStage ){
         Group root = new Group();
-        
-        
-        
-        
+
         //El grupo que se desea agregar, y el tamaño ancho y alto
         Scene scene = new Scene( root, 300, 300 );
         //Titulo de la ventana
@@ -40,25 +36,29 @@ public class JavaFX extends Application {
         //Posicion dle boton
         boton.setLayoutX(45);
         boton.setLayoutY(45);
-    
+
         //para poner una imagen en el fondo de la pantalla.    **************************DEL EJERCICIO***********************************************
-         Image image = new Image ("0.jpg");
-        ImageView ima2 = new ImageView();
-        ima2.setImage(image);
-        root.getChildren().add(ima2);
-        
+        Image imagen0 = new Image ("0.jpg");
+        ImageView verImagen0 = new ImageView();
+        verImagen0.setImage(imagen0);
+        root.getChildren().add(verImagen0);
+
+        //Una nueva imagen para cambiarla por la imagen de fondo, al accionar el botón.
+        Image imagen1 = new Image ("1.jpg");
+        ImageView verImagen1 = new ImageView();
+        root.getChildren().add(verImagen1);
+
         //Se agrega el boton
         root.getChildren().add(boton);
-        
-        //para mostrar en pantalla un texto al pulsar el botón.  *************************DEL EJERCICIO********************************************
-        boton.setOnAction(event -> {System.out.println("Hola.");});
-        
-        
-        boton.setOnAction(event -> {  Image image2 = new Image ("1.jpg");
-        ImageView ima22 = new ImageView();
-        ima2.setImage(image2);
-        root.getChildren().add(ima22);   });
-               
+
+        //para cambiar la imagen de fondo por otra imgen, y para que aparezca una saludo por pantalla al mismo tiempo.
+        // 1º colocadas las dos acciones dentro del mismo evento,
+        //                                        **************************DEL EJERCICIO***********************************************
+        boton.setOnAction(event -> { 
+                verImagen1.setImage(imagen1);                
+                System.out.println("Hola.");}
+        );
+
         //Para mostrar la visible, semejante al setVisible(true)
         primaryStage.show();        
     }
