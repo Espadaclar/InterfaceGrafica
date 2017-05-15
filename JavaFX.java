@@ -10,21 +10,24 @@ import javafx.scene.image.ImageView;
 
 public class JavaFX extends Application {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) {//recibe  un array de String
         //Esto se utiliza para ejecutar la aplicación 
         //es como el new Contructor();
-        launch(args);
+        launch(args);//invocamos a este  metodo que sale de la clase Application y el
+                    //hace arrancar el metodo start de la clase Application
     }
 
     //Este metodo es obligatorio
-    public void start( Stage primaryStage ){
+    public void start( Stage primaryStage ){//recibe un parámetro que va ha ser la ventan de la aplicación
+       
+        //es un tipo de contenedor que colocamos dentro de la escena.
         Group root = new Group();
 
-        //El grupo que se desea agregar, y el tamaño ancho y alto
+        //El grupo que se desea agregar, y el tamaño ancho y alto y root que es el contenedor
         Scene scene = new Scene( root, 300, 300 );
-        //Titulo de la ventana
+        //para fijar el Titulo de la ventana
         primaryStage.setTitle("JavaFx");
-        //Se a  grega la scena
+        //para fijar la escena al parametro a  grega la scena
         primaryStage.setScene( scene);
 
         //Creacion del boton
@@ -33,7 +36,7 @@ public class JavaFX extends Application {
         //Tamaño del boton
         boton.setPrefSize(100, 50);
         //Tamaño del boton
-        //Posicion dle boton
+        //Posicion dle boton, pasandole las coordenadas de los ejes x e y.
         boton.setLayoutX(45);
         boton.setLayoutY(45);
 
@@ -54,7 +57,7 @@ public class JavaFX extends Application {
         //para cambiar la imagen de fondo por otra imgen, y para que aparezca una saludo por pantalla al mismo tiempo.
         // 1º colocadas las dos acciones dentro del mismo evento,
         //                                        **************************DEL EJERCICIO***********************************************
-        boton.setOnAction(event -> { 
+        boton.setOnAction(event -> { //objeto con una clase anomima como parametro
                 verImagen1.setImage(imagen1);                
                 System.out.println("Hola.");}
         );
